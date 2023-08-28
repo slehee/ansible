@@ -5,5 +5,5 @@
   tasks:
     - name: Run apt update
       apt:
-        upgarde: yes
+        upgrade: yes
         update_cache: True
