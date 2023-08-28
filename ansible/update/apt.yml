@@ -2,8 +2,6 @@
 - name: Update APT cache
   hosts: all
   become: True
-  become_method: sudo
-  ansible_user: "root"
   tasks:
     - name: Run apt update
       apt:
