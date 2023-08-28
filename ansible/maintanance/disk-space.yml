@@ -1,0 +1,11 @@
+---
+- name: Check Disk Usage
+  become: yes
+  tasks:
+    - name: Get available disk space for root partition
+      shell: df -h / | awk 'NR==2 {print $4}'
+      register: available_space
+
+    - name: Display available disk space
+      debug:
+        var: available_space.stdout
