@@ -2,8 +2,8 @@
 - name: Update APT cache
   hosts: all
   become: True
+  become_user: root
   tasks:
     - name: Run apt update
-      apt:
-        upgrade: yes
+      ansible.builtin.apt:
         update_cache: True
