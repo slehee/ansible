@@ -2,6 +2,7 @@
 - name: Update APT cache and install packages
   hosts: all
   become: True
+  become_method: sudo
   tasks:
     - name: Run apt update
       ansible.builtin.apt:
