@@ -1,5 +1,6 @@
 ---
 - name: Update APT cache
+  hosts: all
   become: yes
   tasks:
     - name: Run apt update
