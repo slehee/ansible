@@ -2,6 +2,7 @@
 - name: Update APT cache
   hosts: all
   become: True
+  become_method: sudo
   tasks:
     - name: Run apt update
       apt:
