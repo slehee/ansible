@@ -1,14 +1,17 @@
 ---
-- name: Update APT cache
+- name: Update APT cache and install packages
   hosts: all
   become: True
   tasks:
     - name: Run apt update
       ansible.builtin.apt:
-           update_cache: true
-           cache_valid_time: 3600
-           allow_unauthenticated: yes
-           force_apt_get: true
-     name:
-        - htop
-        - tmux
+        update_cache: yes
+        cache_valid_time: 3600
+        allow_unauthenticated: yes
+
+    - name: Install desired packages
+      ansible.builtin.apt:
+        name:
+          - htop
+          - tmux
+        state: present
