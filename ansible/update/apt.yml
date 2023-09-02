@@ -1,7 +1,15 @@
 ---
-- name: Update APT cache
-  become: yes
+- name: Update APT cache, upgrade, and install packages
+  hosts: all
+  become: True
   tasks:
     - name: Run apt update
-      apt:
+      ansible.builtin.apt:
         update_cache: yes
+        cache_valid_time: 3600
+        allow_unauthenticated: yes
+
+    - name: Upgrade all packages to the latest version
+      ansible.builtin.apt:
+        upgrade: dist
+
