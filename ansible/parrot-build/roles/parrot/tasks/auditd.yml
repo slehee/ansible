@@ -38,8 +38,6 @@
     - { "path":"/etc/laurel" }
   become: true
   become_method: sudo
-  async: 15
-  poll: 0
 
 - name: "Copy laurel/config.toml to /etc/laurel/config.toml"
   copy:
