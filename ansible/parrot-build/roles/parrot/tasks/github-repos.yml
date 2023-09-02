@@ -12,6 +12,7 @@
 - name: Create temporary build directory
   ansible.builtin.tempfile:
     state: directory
+    path: /tmp
   register: build_dir
 
 - name: "Copying python script to download github releases"
