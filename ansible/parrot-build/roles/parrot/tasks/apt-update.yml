@@ -1,7 +1,4 @@
 ---
-- name: Update APT cache
-  become: yes
-  tasks:
-    - name: Run apt update
-      apt:
-        update_cache: yes
+- name: Run apt update
+    apt:
+      update_cache: yes
