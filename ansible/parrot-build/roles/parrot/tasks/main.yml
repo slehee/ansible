@@ -14,3 +14,15 @@
       tags:
         - install
         - parrot
+    - name: Installing Kerbrute
+      import_tasks: kerbrute.yml
+      tags:
+        - install
+        - parrot
+    - name: Installing python-tools
+      import_tasks: python-tools.yml
+      tags:
+        - install
+        - parrot
+
+
