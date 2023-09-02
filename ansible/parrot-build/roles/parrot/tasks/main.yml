@@ -17,7 +17,7 @@
     - install
     - parrot
 
-- name: Installing python-tools
+- name: Installing tmux
   import_tasks: configure_tmux.yml
   tags:
     - install
@@ -31,6 +31,25 @@
 
 - name: Configure UFW
   import_tasks: ufw.yml
+  tags:
+    - install
+    - parrot
+
+- name: Configure burp
+  import_tasks: burp.yml
+  tags:
+    - install
+    - parrot
+
+- name: Configure firefox
+  import_tasks: firefox.yml
+  tags:
+    - install
+    - parrot
+
+
+- name: Configure terminal
+  import_tasks: terminal.yml
   tags:
     - install
     - parrot
