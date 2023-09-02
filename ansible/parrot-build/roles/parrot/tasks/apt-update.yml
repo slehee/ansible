@@ -1,5 +1,4 @@
 ---
-# tasks file for parrot
 - name: Run apt update
   ansible.builtin.apt:
     update_cache: yes
