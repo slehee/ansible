@@ -18,7 +18,7 @@
     - parrot
 
 - name: Installing python-tools
-  import_tasks: python-tools.yml
+  import_tasks: configure_tmux.yml
   tags:
     - install
     - parrot

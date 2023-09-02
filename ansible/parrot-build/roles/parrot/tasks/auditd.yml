@@ -70,6 +70,7 @@
 - name: "Extract /tmp/laurel-v0.5.2-x86_64-glibc.tar.gz"
   unarchive:
     src: /tmp/laurel-v0.5.2-x86_64-glibc.tar.gz
+    remote_src: True
     dest: /tmp/laurel/        
     owner: root
     group: root
