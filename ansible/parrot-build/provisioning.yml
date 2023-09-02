@@ -1,0 +1,7 @@
+---
+# defaults file for parrot
+- hosts: all
+  become: true
+  gather_facts: true
+  roles:
+           - parrot
