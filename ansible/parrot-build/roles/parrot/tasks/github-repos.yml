@@ -15,6 +15,11 @@
     path: /tmp
   register: build_dir
 
+- name: Debug build_dir
+  debug:
+    var: build_dir
+
+
 - name: "Copying python script to download github releases"
   copy:
     src: "files/githubdownload.py"
