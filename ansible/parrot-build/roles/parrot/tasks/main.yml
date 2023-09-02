@@ -1,41 +1,36 @@
 ---
-# tasks file for parrot
-- hosts: all
-  become: true
-  become_method: sudo
-  tasks:
-    - name: Run apt update && Install packages
-      import_tasks: apt-update.yml
-      tags:
-        - update
-        - parrot
+- name: Run apt update && Install packages
+  import_tasks: apt-update.yml
+  tags:
+    - update
+    - parrot
 
-    - name: Installing useful github repos
-      import_tasks: github-repos.yml
-      tags:
-        - install
-        - parrot
+- name: Installing useful github repos
+  import_tasks: github-repos.yml
+  tags:
+    - install
+    - parrot
 
-    - name: Installing Kerbrute
-      import_tasks: kerbrute.yml
-      tags:
-        - install
-        - parrot
+- name: Installing Kerbrute
+  import_tasks: kerbrute.yml
+  tags:
+    - install
+    - parrot
 
-    - name: Installing python-tools
-      import_tasks: python-tools.yml
-      tags:
-        - install
-        - parrot
+- name: Installing python-tools
+  import_tasks: python-tools.yml
+  tags:
+    - install
+    - parrot
 
-    - name: Installing & Configure Audit Rules
-      import_tasks: auditd.yml
-      tags:
-        - install
-        - parrot
+- name: Installing & Configure Audit Rules
+  import_tasks: auditd.yml
+  tags:
+    - install
+    - parrot
 
-    - name: Configure UFW
-      import_tasks: ufw.yml
-      tags:
-        - install
-        - parrot
+- name: Configure UFW
+  import_tasks: ufw.yml
+  tags:
+    - install
+    - parrot
