@@ -8,3 +8,33 @@
 - name: Upgrade all packages to the latest version
   ansible.builtin.apt:
         upgrade: dist
+
+- name: "Installing Packages"
+  package:
+    name:
+      - jq
+      - pipx
+      - ntpdate
+      - flameshot
+      - exiftool
+    state: latest
+    
+- name: "Installing tools from Gems"
+  gem:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - logger
+    - stringio
+    - winrm
+    - builder
+    - erubi
+    - gssapi
+    - gyoku
+    - httpclient
+    - logging
+    - little-plugger
+    - nori
+    - rubyntlm
+    - winrm-fs
+    - evil-winrm
