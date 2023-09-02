@@ -1,8 +1,11 @@
 ---
 # tasks file for parrot
+- name: Run apt update
+    ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 3600
+    allow_unauthenticated: yes
 
-- name: Run apt udapte
-  import_tasks: apt-update.yml
-  tags:
-    - update
-    - parrot
+- name: Upgrade all packages to the latest version
+    ansible.builtin.apt:
+      upgrade: dist
