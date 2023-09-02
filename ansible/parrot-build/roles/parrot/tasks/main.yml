@@ -1,9 +1,16 @@
 ---
 # tasks file for parrot
 - hosts: all
+  become: true
+  become_method: sudo
   tasks:
-    - name: Run apt udapte
+    - name: Run apt udapte && Install packages
       import_tasks: apt-update.yml
       tags:
         - update
+        - parrot
+    - name: Installing useful github repos
+      import_tasks: github-repos.yml
+      tags:
+        - install
         - parrot
