@@ -1,8 +1,9 @@
 ---
 # tasks file for parrot
-
-- name: Run apt udapte
-  import_tasks: apt-update.yml
-  tags:
-    - update
-    - parrot
+- hosts: all
+  tasks:
+    - name: Run apt udapte
+      import_tasks: apt-update.yml
+      tags:
+        - update
+        - parrot
